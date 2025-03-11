@@ -1,0 +1,172 @@
+<%- include('partials/headerForm') %>
+
+<style>
+  /* Navbar Styling */
+  .navbar {
+    background: linear-gradient(45deg,rgb(20, 34, 38), #0e274b);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff !important;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 20px;
+    font-weight: 800;
+    color: #f8f9fa !important;
+    transition: color 0.3s ease;
+    margin-left: 25px;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #ffcccb !important;
+    background-color: rgb(114, 0, 0);
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+</style>
+
+<body 
+  style="background-image:url('https://images.pexels.com/photos/16065386/pexels-photo-16065386/free-photo-of-aerial-view-of-residential-district-at-dusk.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0; z-index: 10;">
+    <a class="navbar-brand" href="/">MyWebsite</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">LOGIN</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h2 class="card-title text-center">SIGN-UP</h2>
+            <form class="form-signin" action="/signup" method="POST">
+              <div class="form-label-group">
+                <input name="firstName" type="text" id="inputFirstName" class="form-control" placeholder="First name " required autofocus>
+                <label for="inputFirstName">First name</label>
+              </div>
+              <div class="form-label-group">
+                <input name="lastName" type="text" id="inputLastName" class="form-control" placeholder="Last name " required >
+                <label for="inputLastName">Last name</label>
+              </div>
+              <div class="form-label-group">
+                <input name="phoneNumber" type="text" id="inputPhoneNumber" class="form-control" placeholder="Phone number" required>
+                <label for="inputPhoneNumber">Phone number</label>
+              </div>
+              <div class="form-label-group">
+                <input name="societyName" list="societyList" id="inputSocietyName" class="form-control" placeholder="Society name" autocomplete="off" required>
+                <datalist id="societyList">
+                  <% societies.forEach(society => { %>
+                    <option value="<%= society.societyName %>">
+                  <% }) %>
+                </datalist>
+                <label for="inputSocietyName">Society name</label>
+              </div>
+              <div class="form-label-group">
+                <input name="flatNumber" type="text" id="inputFlatNumber" class="form-control" placeholder="Flat number" required>
+                <label for="inputFlatNumber">Flat number</label>
+              </div>
+              <div class="form-label-group">
+                <input name="username" type="email" id="email" class="form-control" placeholder="Email" required>
+                <label for="email">Email</label>
+              </div>
+              <div class="form-label-group">
+                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+
+             
+
+
+
+              <button class="btn btn-lg btn-dark btn-block text-uppercase" type="submit" style="font-size:15px;">Sign up</button>
+              <hr class="my-4">
+
+              <!-- gmail-site-verification -->
+
+              <h6 class="card-text text-center" style="color: #f8f9fa; font: 1em sans-serif;">Already have an account? </h6></b>
+              <a href="/login" class="btn  btn-danger btn-block text-uppercase" type="submit" style="font-size:15px;">sign-in</a>
+            </form>
+
+            <div class="form-label-group">
+              <input style="width:38vh; margin: 15px;" type="text" id="otp" placeholder="Enter OTP">
+              <label style="padding-top:25px; padding-left:40px; text-align:left;" for="otp">Enter OTP</label>
+            </div>
+
+            <button class="btn btn-lg btn-dark btn-block text-uppercase" onclick="generateOTP()">Generate OTP</button>
+            <button class="btn btn-lg btn-info btn-block text-uppercase" onclick="verifyOTP()">Verify OTP</button>
+            <p class="message" id="response" style="color: red;"></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    async function generateOTP() {
+        const email = document.getElementById('email').value;
+
+        const response = await fetch('http://localhost:3000/generate-otp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        });
+
+        const result = await response.text();
+        document.getElementById('response').innerText = result;
+    }
+
+    async function verifyOTP() {
+        const email = document.getElementById('email').value;
+        const otp = document.getElementById('otp').value;
+
+        const response = await fetch('http://localhost:3000/verify-otp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, otp })
+        });
+
+        const result = await response.text();
+        document.getElementById('response').innerText = result;
+    }
+</script>
+</body>
+
+

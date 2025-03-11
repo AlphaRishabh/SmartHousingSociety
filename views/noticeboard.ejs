@@ -1,0 +1,45 @@
+<!-- Noticeboard -->
+<%- include('partials/navbar') %>
+
+<div  id="noticeContain">
+  <h2 id="noticeHead">
+    <div id="dots">
+    <div id="n1"></div>
+    <div id="n2"></div>
+    <div id="n3"></div>
+    </div>
+    NOTICEBOARD
+  </h2>
+  <div class="container-profile">
+    <% if(isAdmin){ %>
+      <row>
+        <col-4>
+            <a href="/notice" class="btn btn-primary btn-md text-uppercase center" style="border-radius:3rem; max-width:180px; display: block; margin: auto">
+              Create Notice
+            </a>
+        </col-4>
+      </row>
+      <% } %>
+    <div class="row">
+      <% notices.reverse().forEach(function(notice){ %>
+      <div id="colNotice">
+        <div class="card card-profile my-5" style="margin-top: 10px;">
+          <div class="card-body" style="padding:3% 8% 3%;">
+            <div class="noticeText">
+<center>              <h6><i class="fas fa-paperclip"></i></i> <b><%= notice.subject %></b></h6>
+</center>              <hr style="color: black;">
+             
+              <p id="noticeP2"><%= notice.details %></p>
+
+              <p id="noticeP1">
+                <%= notice.date %> <i>- PUBLISHED BY ADMIN</i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>    
+  </div>
+</div>
+<%- include('partials/footbar') %>

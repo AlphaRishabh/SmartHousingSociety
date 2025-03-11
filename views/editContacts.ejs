@@ -1,0 +1,53 @@
+<!-- Update Emergency contacts -->
+<%- include('partials/navbar') %>
+
+<div class="container center">
+  <div class="row" style=" margin: auto; margin-top: 20px;margin-bottom: 20px;">
+    <div class="col-sm-12 col-md-9 col-lg-10 center" style="max-width: 600px;float: initial;">
+      <div class="card card-profile my-6" style="background-color: aliceblue;"> <h2 id="contactEdith1">
+        EDIT CONTACTS DETAILS
+      </h2>
+        <div class="card-body" style="padding:5%; margin:5% 0; padding-top:3%;">
+          <form class="form-edit" action="/editContacts" method="POST">
+            <div class=row style="margin: 1%;">
+              <div class="col-sm-12 col-lg-12" style=" margin-top:4%"> <b> PLUMBING SERVICES:</b></div>
+              <div class="col-sm-12 col-lg-12 editInput" style=" margin-top:4px;">
+                <input name="plumbingService" type="tel" id="plumbingService" class="form-control" value="<%= contact.plumbingService %>" autofocus>
+              </div>
+              <div class="col-sm-12 col-lg-12" style=" margin-top:4% "> <b> PHARMACY :</b></div>
+              <div class="col-sm-12 col-lg-12 editInput" style=" margin-top:4px ">
+                <input name="medicineShop" type="tel" id="medicineShop" class="form-control" value="<%= contact.medicineShop %>">
+              </div>
+              <div class="col-sm-12 col-lg-12" style=" margin-top:4% "> <b> DOCTOR :</b></div>
+              <div class="col-sm-12 col-lg-12 editInput" style=" margin-top:6px ">
+                <input name="doctor" type="tel" id="doctor" class="form-control" value="<%= contact.doctor %>">
+              </div>
+              <div class="col-sm-12 col-lg-12" style=" margin-top:4% "> <b> AMBULANCE :</b></div>
+              <div class="col-sm-12 col-lg-12 editInput" style=" margin-top:4px ">
+                <input name="ambulance" type="tel" id="ambulance" class="form-control" value="<%= contact.ambulance %>"> 
+              </div>
+              <div class="col-sm-12 col-lg-12" style=" margin-top:4% "> <b> FIRE STATION :</b></div>
+              <div class="col-sm-12 col-lg-12 editInput" style=" margin-top:6px ">
+                <input name="fireStation" type="tel" id="fireStation" class="form-control" value="<%= contact.fireStation %>">
+              </div>
+              <div class="col-sm-12 col-lg-12" style=" margin-top:4% "> <b> POLICE STATION :</b></div>
+              <div class="col-sm-12 col-lg-12 editInput" style=" margin-top:6px ">
+                <input name="policeStation" type="tel" id="policeStation" class="form-control" value="<%= contact.policeStation %>">
+              </div>
+              <div class="col-sm-12 col-lg-12" style=" margin-top:4%;"> <b> GUARD :</b></div>
+              <div class="col-sm-12 col-lg-12 editInput" style=" margin-top:6px ">
+                <input name="guard" type="tel" id="guard" class="form-control" value="<%= contact.guard %>">
+              </div>
+            </div>
+            <div style=" margin-top: 4%;">
+              <button type="submit" class="btn btn-primary btn-md  float-right" style="margin: 10px;">Save</button>
+              <a href="/contacts" class="btn btn-danger btn-md float-right" style="margin: 10px;">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footbar') %>

@@ -1,0 +1,166 @@
+
+<%- include('partials/navbar') %>
+
+<div class="container">
+  <h2 id="contactH1">
+    EMERGENCY CONTACTS
+</h2>
+
+<% if(isAdmin){ %>
+  <row>
+    <col-4>
+        <a href="/editContacts" class="btn btn-primary btn-md text-uppercase center" style="border-radius:3rem; max-width:150px; display: block; margin: auto; margin-top: 10px;">
+          Edit Contact
+        </a>
+    </col-4>
+  </row>
+  <% } %>
+
+  <div class="row" style="margin-top: 50px;margin-bottom: 500px;">
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid"  style="height: 170px;" src="https://img.freepik.com/free-photo/customer-service-handsome-young-guy-office-suit-with-laptop-headset-pointing-coffee-cup_140725-164873.jpg?t=st=1738074592~exp=1738078192~hmac=c0cf3d0223631ffddf95a1d57f65911d1702018066bde0a450aa509a845825bb&w=1380">
+        </div>
+        <div class="team-content">
+          <h3 class="name">ADMIN</h3>
+          <h4 class="title"><i class="fas fa-phone-square-alt"></i>9856321470
+          </h4>
+        </div>
+
+        <ul class="social">
+          <h4 class="contactDetailName" >Rishabh Pandey</h4>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid"  style="height: 170px;"src="https://images.unsplash.com/photo-1590125234767-5aecaa98c228?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </div>
+        <div class="team-content">
+          <h3 class="name">AMBULANCE</h3>
+          <h4 class="title"><i class="fas fa-phone-square-alt"></i> <%= contact.ambulance %>
+          </h4>
+        </div>
+
+        <ul class="social">
+          <h4 class="contactDetailName">Indra Kumar</h4>
+        </ul>
+
+      </div>
+    </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid"  style="height: 170px;"src="https://img.freepik.com/free-photo/plumber-repair-experienced-attentive-middleaged-man-examining-bottom-kitchen-sink_259150-58266.jpg?t=st=1738072863~exp=1738076463~hmac=9ee7d358afe22e355c7561a5229afea4410cd8a1eba363d3ad4b13043b63a63f&w=1380">
+        </div>
+        <div class="team-content">
+          <h3  class="name">PLUMBER</h3>
+          <h4 class="title"><%= contact.plumbingService %></h4>
+        </div>
+
+        <ul class="social">
+          <h4 class="contactDetailName">Rampal Yadav</h4>
+        </ul>
+
+      </div>
+    </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" style="height: 170px;" src="https://images.unsplash.com/photo-1598285385411-c5952310875e?q=80&w=1966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </div>
+        <div class="team-content">
+          <h3 class="name">PHARMACY</h3>
+          <h4 class="title"> <i class="fas fa-phone-square-alt"></i> <%= contact.medicineShop %>
+          </h4>
+        </div>
+
+        <ul class="social">
+          <h4 class="contactDetailName">Raj Kumar</h4>
+        </ul>
+
+      </div>
+    </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" style="height: 170px;" src="https://plus.unsplash.com/premium_photo-1661580574627-9211124e5c3f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </div>
+        <div class="team-content">
+          <h3 class="name">DOCTOR</h3>
+          <h4 class="title"><i class="fas fa-phone-square-alt"></i> <%= contact.doctor %>
+          </h4>
+        </div>
+
+        <ul class="social">
+          <h4 class="contactDetailName">Abhay Dalela</h4>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" style="height: 170px;" src="https://img.freepik.com/free-photo/portrait-male-security-guard-with-radio-station-camera-screens_23-2150368714.jpg?t=st=1738073899~exp=1738077499~hmac=4dff51a035106595d8ce86f3e18dce5e55c7a794484b9ea3d69c477348d4707d&w=1380">
+        </div>
+        <div class="team-content">
+          <h3 class="name">GUARD</h3>
+          <h4 class="title"><i class="fas fa-phone-square-alt"></i><%= contact.guard %>
+          </h4>
+        </div>
+
+        <ul class="social">
+          <h4 class="contactDetailName">Abhay Verma</h4>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" style="height: 170px;" src="https://img.freepik.com/free-photo/cinematic-shot-khaki-uniform-mumbai-policemen_1409-7570.jpg?t=st=1738074192~exp=1738077792~hmac=da3e80b14585744f4df94ca51533034a5c4642e9b5ae46cdac02679b27890359&w=1380">
+        </div>
+        <div class="team-content">
+          <h3 class="name">POLICE STATION</h3>
+          <h4 class="title"><i class="fas fa-phone-square-alt"></i> <%= contact.policeStation %>
+        </div>
+
+        <ul class="social">
+          <h4 class="contactDetailName">Navneesh Mishra</h4>
+        </ul>
+
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" style="height: 170px;" src="https://plus.unsplash.com/premium_photo-1683133357376-ee581f35158c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </div>
+        <div class="team-content">
+          <h3 class="name">FIRE-STATION</h3>
+          <h4 class="title"><i class="fas fa-phone-square-alt"></i> <%= contact.fireStation %>
+
+          </h4>
+        </div>
+              
+        <ul class="social">
+          <h4 class="contactDetailName">Vinay Singh</h4>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/footbar') %>

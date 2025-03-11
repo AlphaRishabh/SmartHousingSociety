@@ -1,0 +1,208 @@
+<!-- Product Overview -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Housing-Society</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="Simplify everyday living for your housing society!">
+  <meta name="google-site-verification" content="P8hqAw19_O3IT82LJYjlEsI9TDS9vMATQkZXKoe2M8E">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/1c9ad4b785.js" crossorigin="anonymous"></script>
+  <%- include('scripts/adsense') %>
+  <%- include('scripts/tagManager') %>
+
+  <style>
+
+    /* GLOBAL STYLES */
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h3 {
+  color: #fff;
+  padding:19px;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(230, 223, 210) }
+}
+@media (max-width: 768px) {
+  .typewriter h3 {
+    font-size: clamp(10px, 4vw, 24px);
+    letter-spacing: 0.08em;
+    border-right: 1.5px solid orange; /* Smaller cursor for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter h3 {
+    font-size: clamp(7px, 3.5vw, 20px);
+    letter-spacing: 0.05em;
+    border-right: 1px solid orange; /* Even smaller cursor */
+  }
+}
+
+
+
+  </style>
+</head>
+
+<body
+style="
+    background: linear-gradient(rgba(255, 255, 255, 0.005), rgba(5, 5, 5,1)), url('images/lighthousebg.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+"
+>
+  <nav class="headNav" style="position:sticky; top:0; z-index:10;">
+    <div class="contain" id="navbar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav" id="navlist">
+          <li><a href="#stats">STATISTICS</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li><a href="/login">LOGIN</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li><a href="/signup">SIGNUP</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li><a href="/chatbox">CHATBOT</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="advertisement">
+    <ins class="adsbygoogle"
+      data-ad-client="ca-pub-6343650725036009"
+      data-ad-slot="3263921922"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+  </div>
+
+  <section class="banner" id="banner">
+    <div class="content">
+      <h1 data-aos="fade-right" class="metal">Housing-Society</h1>
+<div class="typewriter">
+
+  <h3>Where Dreams Find a Home – Your Perfect Haven Awaits!</h3>
+
+</div>      <div data-aos="zoom-in">
+        <a href="/register"><button  class="glow-on-hover">REGISTER</button>
+        </a>
+      </div>
+    </div>
+  </section>
+  <br>
+  <section id="stats" class="d-flex justify-content-center w3-container">
+    <!-- style="background-color: #1d1919;" -->
+
+    <div class="content-box-md">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="w3-center stats" data-aos="zoom-in-up">
+              STATISTICS
+            </h1>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <!-- Card 1 -->
+          <div class="col-md-3 col-sm-3 col-xs-6" data-aos="zoom-in-down">
+            <div class="stats-item picCard">
+              <div class="cover item-a">
+                <i class='fas fa-city' style='font-size:36px; color: white;'></i>
+                <div class="card-back">
+                  <h2>CITIES</h2>
+                  <a class="acard" href="#"><%= city %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-3 col-sm-3 col-xs-6" data-aos="zoom-in-down">
+            <div class="stats-item picCard">
+              <div class="cover item-b">
+                <i class='fas fa-building' style='font-size:36px; color: white;'></i>
+                <div class="card-back">
+                  <h2>TOTAL SOCIETIES</h2>
+                  <a class="acard" href="#"><%= society %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-3 col-sm-3 col-xs-6" data-aos="zoom-in-down">
+            <div class="stats-item picCard">
+              <div class="cover item-c">
+                <i class='fas fa-home' style='font-size:36px; color: white;'></i>
+                <div class="card-back">
+                  <h2>TOTAL HOMES</h2>
+                  <a class="acard" href="#"><%= user %></a></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-md-3 col-sm-3 col-xs-6" data-aos="zoom-in-down">
+            <div class="stats-item picCard">
+              <div class="cover item-d">
+                <i class='fas fa-user' style='font-size:36px; color: white;'></i>
+                <div class="card-back">
+                  <h2>PAGE VISITORS</h2>
+                  <a class="acard" href="#"><%= visit %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+  <script src="counter.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  
+<%- include('partials/footbar') %>

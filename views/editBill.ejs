@@ -1,0 +1,209 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<%- include('partials/navbar') %>
+
+<div class="custom-mainscreen">
+  <div class="custom-card">
+    <div class="custom-leftside">
+      <img
+        src="https://images.pexels.com/photos/7680692/pexels-photo-7680692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        class="custom-product"
+        alt="Product"
+      />
+    </div>
+    <div class="custom-rightside">
+      <form class="form-edit" action="/editBill" method="POST">
+        <h1 style="font-family: Kanit; font-weight: 800; font-size: 35px; text-align: center;">EDIT BILL</h1>
+        <p>Society Charges</p>
+        <input
+          name="societyCharges"
+          type="text"
+          class="custom-inputbox"
+          value="<%= maintenanceBill.societyCharges %>"
+          required
+          autofocus
+        />
+
+        <p>Repairs and Maintenance</p>
+        <input
+          name="repairsAndMaintenance"
+          type="text"
+          class="custom-inputbox"
+          value="<%= maintenanceBill.repairsAndMaintenance %>"
+          required
+        />
+
+        <p>Sinking Fund</p>
+        <input
+          name="sinkingFund"
+          type="text"
+          class="custom-inputbox"
+          value="<%= maintenanceBill.sinkingFund %>"
+          required
+        />
+
+        <p>Water Charges</p>
+        <input
+          name="waterCharges"
+          type="text"
+          class="custom-inputbox"
+          value="<%= maintenanceBill.waterCharges %>"
+          required
+        />
+
+        <p>Insurance Charges</p>
+        <input
+          name="insuranceCharges"
+          type="text"
+          class="custom-inputbox"
+          value="<%= maintenanceBill.insuranceCharges %>"
+          required
+        />
+
+        <p>Parking Charges</p>
+        <input
+          name="parkingCharges"
+          type="text"
+          class="custom-inputbox"
+          value="<%= maintenanceBill.parkingCharges %>"
+          required
+        />
+
+        <div class="custom-buttons">
+          <button type="submit" class="custom-button">Save</button>
+          <a href="/bill" class="custom-button cancel-button">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+
+
+  .custom-mainscreen {
+    min-height: 95vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #963e7b;
+  }
+
+  .custom-card {
+    width: 60rem;
+    margin: auto;
+    background: white;
+    align-self: center;
+    border-radius: 1.5rem;
+    box-shadow: 4px 3px 20px #3535358c;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .custom-leftside {
+    background: #1c012f;
+    width: 25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+  }
+
+  .custom-product {
+    object-fit: cover;
+    width: 20em;
+    height: 20em;
+    border-radius: 100%;
+  }
+
+  .custom-rightside {
+    background-color: #ffffff;
+    width: 35rem;
+    border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem 2rem 3rem 3rem;
+  }
+
+  .custom-rightside p {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0.8rem 0;
+  }
+
+  .custom-inputbox {
+    color: #030303;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    font-family: 'Roboto', sans-serif;
+    color: #615a5a;
+    font-size: 1.1rem;
+    font-weight: 500;
+    outline: none;
+  }
+
+  .custom-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .custom-button {
+    background: linear-gradient(135deg, #753370 0%, #298096 100%);
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    width: 48%;
+    letter-spacing: 0.11rem;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .custom-button:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 3px 3px 6px #38373785;
+  }
+
+  .cancel-button {
+    background: #d9534f;
+  }
+
+  .cancel-button:hover {
+    background: #c9302c;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .custom-card {
+      flex-direction: column;
+      width: auto;
+    }
+
+    .custom-leftside {
+      width: 100%;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-radius: 0;
+    }
+
+    .custom-rightside {
+      width: auto;
+      border-bottom-left-radius: 1.5rem;
+      padding: 0.5rem 3rem 3rem 2rem;
+      border-radius: 0;
+    }
+  }
+</style>
+
+<%- include('partials/footbar') %>

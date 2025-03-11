@@ -1,0 +1,46 @@
+<!-- View lostItem -->
+<style>
+
+</style>
+<%- include('partials/navbar') %>
+
+<div id="helpContain">
+  <h2 id="helpHead">
+    <img src="images/complaint.png" alt="">
+    PERSONAL LOSTITEMS
+  </h2>
+  <div class="container container-profile">
+    <row>
+      <col-4>
+        <a href="/report" class="btn btn-info btn-md text-uppercase center" style="border-radius:3rem; max-width:180px; display: block; margin: auto;">
+          Lost Items
+        </a>
+      </col-4>
+    </row>
+    <div class="row">
+      <div id="helpCol">
+        <div class="card card-profile my-5">
+          <div class="card-body" style="padding:8% 8% 3%;">
+            <div id="helpCard">
+            <% lostItems.reverse().forEach((lostItem, index) => { %>
+                <center><h6 id="helph6"><i class="fas fa-plus-circle"></i> <b><%= lostItem.category %></b>
+                </h6></center>
+              <p style="padding-left: 20px; color: grey;"><%= lostItem.date %> - <%= lostItem.type %></p>
+              <p style="padding-left: 20px"><%= lostItem.description %></p>
+              <% if(lostItem.status==='open'){ %>
+                <p style="padding:7px;margin-left: 10px; border-radius:3rem;color: aliceblue; background-color: rgb(241, 50, 50); width: fit-content;">NOT FOUND</p>
+              <% } else if(lostItem.status==='close') { %>
+                <p style="padding-left: 20px; border-radius:3rem; background-color: rgb(81, 192, 17); width: fit-content;">FOUND</p>
+              <% } %>
+              <% if(lostItems[index+1]){ %>
+                <hr class="my-4">
+              <% } %>
+            <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>
+<%- include('partials/footbar') %>

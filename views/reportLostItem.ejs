@@ -1,0 +1,46 @@
+<!-- New complaint -->
+<%- include('partials/navbar') %>
+
+<div class="container" style="min-width:80%; margin:auto;margin-top:25px; padding-bottom: 20%;">
+  <div class="row col-md-6 col-md-offset-3">
+    <div class="panel panel-danger" >
+      <div class="text-center" >
+          <h4 id="reportH1">RAISE A COMPLAINT</h4>
+      </div>
+      <div class="panel-body" id="reportForm" >
+          <form action="/report" method="POST">
+            <label>Category</label>
+            <select name="category" class="form-control">
+              <option value="" selected disabled>-- Select a Category --</option>
+              <option>Documents</option>
+              <option>Electronics</option>
+              <option>Clothing and Accessories </option>
+              <option>Bag and Luggage</option>
+              <option>Stationery</option>
+              <option>Other</option>
+            </select> 
+            <br>
+            <div class="form-group">
+              <label>Type</label>
+              <div class="form-group">
+                <label for="Personal" class="radio-inline">
+                  <input type="radio" name="type" id="Personal" value="STOLEN" required>STOLEN
+                </label>
+                <label for="Community" class="radio-inline">
+                  <input type="radio" name="type" id="Community" value="LOST" required>LOST
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="comment">Description</label>
+              <textarea name="description" class="form-control"  type="text" rows="7" id="comment" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit Complaint</button>
+            <a href="/lostfound" class="btn btn-primary">Cancel</a>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footbar') %>

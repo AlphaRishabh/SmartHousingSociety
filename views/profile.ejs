@@ -1,0 +1,92 @@
+<!-- Personal + Society information -->
+<%- include('partials/navbar') %>
+
+<row>
+  <col-4>
+ <div style="margin-top: 15px;">
+  <a href="/editProfile" class="button-86" role="button">
+    Edit Profile
+  </a>
+ </div>     
+      </a>
+
+  </col-4>
+</row>
+
+<div class="container container-profile">
+  <div class="row">
+    <div class="col" id="profileContainer">
+      <div class="card card-profile my-5">
+        <div class="card-body" style="padding-bottom:6%;">
+          <h1 id="profileH1">USERS PROFILE</h1>
+          <!-- <hr class="my-4" style="height: 3px; background-color:#fdfdfd; border-color:#ffffff ; border-radius:4px;"> -->
+          <div>
+            <h2 class="profileH2">PERSONAL INFO</h2>
+          </div>
+          <div style="padding: 20px;font-size: 15px; font-family: sans-serif; padding-left: 0%">
+            <div class=row style="margin: 13px; margin-bottom:0px;margin-top:0px">
+              <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;">  Name :</div>
+              <div class="col-sm-6 col-lg-8">
+                <span class="profile-text"><%= resident.firstName %> <%= resident.lastName %></span>
+              </div>
+            </div>
+            <hr class="my-4" style="height: 1px; background-color:#fdfdfd; border-color:#ffffff ; border-radius:4px;" >
+            <div class=row style="margin: 13px;margin-bottom:0px;margin-top:0px;">
+              <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;"> Phone :</div>
+              <div class="col-sm-6 col-lg-8"><span class="profile-text"><%= resident.phoneNumber %></span></div>
+            </div>
+
+            <hr class="my-4" style="height: 1px; background-color:#fdfdfd; border-color:#ffffff ; border-radius:4px;" >
+
+            <div class=row style="margin: 13px;margin-bottom:0px;margin-top:0px;">
+              <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;"> Flat :</div>
+              <div class="col-sm-6 col-lg-8"><span class="profile-text"><%= resident.flatNumber %></span></div>
+            </div>
+            <hr class="my-4" style="height: 1px; background-color:#fdfdfd; border-color:#ffffff ; border-radius:4px;" >
+
+            <div class=row style="margin: 13px;margin-bottom:0px;margin-top:0px;">
+              <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;"> Email ID :</div>
+              <div class="col-sm-6 col-lg-8">
+                <span class="profile-text" style="text-align:justify; word-break:break-all"><%= resident.username %></span>
+              </div>
+            </div>
+          </div>
+          <!-- <hr class="my-4" style="height: 3px; background-color:#c2c2c2; border-color:#c2c2c2 ; border-radius:2px;"> -->
+          <div >
+          <h2 class="profileH2">SOCIETY INFO</h2>></h2>
+          </div>
+          <div style="padding-top: 15px;font-size: 15px; font-family: sans-serif; padding-left: 0%;  ">
+            <div class=row style="margin: 13px; margin-bottom:0px;margin-top:0px;">
+              <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;"> Society Name :</div>
+              <div class="col-sm-6 col-lg-8"><span class="profile-text"><%= society.societyName %></span></div>
+            </div>
+            <hr class="my-4" style="height: 1px; background-color:#fdfdfd; border-color:#ffffff ; border-radius:4px;" >
+            <div class=row style="margin: 13px; margin-bottom:0px;margin-top:0px;">
+              <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;">Address :</div>
+              <div class="col-sm-6 col-lg-8 " style="text-align: justify; word-break:keep-all; margin-left: 0%;">
+                <span class="profile-text"> <%= society.societyAddress.address %></span>
+              </div>
+            </div>
+            <hr class="my-4" style="height: 1px; background-color:#fdfdfd; border-color:#ffffff ; border-radius:4px;" >
+            <div class=row style="margin: 13px; margin-bottom:0px;margin-top:0px;">
+                <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;">City :</div>
+                <div class="col-sm-6 col-lg-8"><span class="profile-text"><%= society.societyAddress.city %></span></div>
+            </div>
+            <hr class="my-4" style="height: 1px; background-color:#fdfdfd; border-color:#ffffff ; border-radius:4px;" >
+            <div class=row style="margin: 13px; margin-bottom:0px;margin-top:0px;">
+                <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;"> District :</div>
+                <div class="col-sm-6 col-lg-8"><span class="profile-text"><%= society.societyAddress.district %></span></div>
+            </div>
+            <hr class="my-4" style="height: 1px; background-color:#fdfdfd; border-color:#ffffff ; border-radius:4px;" >
+            <div class=row style="margin: 13px; margin-bottom:0px;margin-top:0px;">
+                <div class="col-sm-6 col-lg-4" style="color: #fdfdfd;"> Postal Code :</div>
+                <div class="col-sm-6 col-lg-8"><span class="profile-text"><%= society.societyAddress.postalCode %></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footbar') %>
